@@ -227,7 +227,7 @@ static void debug_onEnter(screen_t *scr){
     if(scr!=&Screen_debug){
       edit->max_value = 450;
       edit->min_value = 0;
-      edit->big_step = 20;
+      edit->big_step = 50;
       edit->step = 5;
       edit->inputData.endString="\260C";
     }
@@ -237,7 +237,7 @@ static void debug_onEnter(screen_t *scr){
     if(scr!=&Screen_debug){
       edit->max_value = 850;
       edit->min_value = 0;
-      edit->big_step = 50;
+      edit->big_step = 100;
       edit->step = 10;
       edit->inputData.endString="\260F";
     }
@@ -354,7 +354,7 @@ static void debug_create(screen_t *scr){
   w->posY = 48;
   w->posX = 0;
   w->width = 52;
-  edit->big_step = 20;
+  edit->big_step = 30;
   edit->step = 5;
   edit->setData = (void (*)(void *))&setSetpoint;
   edit->selectable.tab=0;
