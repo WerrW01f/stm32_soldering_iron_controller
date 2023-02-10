@@ -508,7 +508,7 @@ static void Cal_Settings_create(screen_t *scr){
   newComboEditable(w, strings[lang]._Cal_250, &edit, &Cal_Combo_Adjust_C250);
   edit->inputData.reservedChars=4;
   edit->inputData.getData = &getCal250;
-  edit->big_step = 20;
+  edit->big_step = 30;
   edit->step = 10;
   edit->setData = (void (*)(void *))&setCal250;
   edit->max_value = 4000;
@@ -518,7 +518,7 @@ static void Cal_Settings_create(screen_t *scr){
   newComboEditable(w, strings[lang]._Cal_400, &edit, &Cal_Combo_Adjust_C400);
   edit->inputData.reservedChars=4;
   edit->inputData.getData = &getCal400;
-  edit->big_step = 20;
+  edit->big_step = 30;
   edit->step = 10;
   edit->setData = (void (*)(void *))&setCal400;
   edit->max_value = 4000;
