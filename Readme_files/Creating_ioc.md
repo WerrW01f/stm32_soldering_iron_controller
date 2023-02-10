@@ -102,7 +102,8 @@ If you make a new .ioc file, ex. for a different MCU, follow this guide:<br>
         
     NVIC Settings
         DMAx channel interrupt enabled
-        I2Cx global interrupt disabled  
+        I2Cx event interrupt enabled  
+	I2Cx error interrupt disabled  
         
         
 **ADC**<br>
