@@ -32,7 +32,7 @@ const settings_t defaultSettings = {
   .displayXflip         = 1,
 #ifdef SSD1306
   .displayClk           = 0xF0,
-  .displayVcom          = 0x44,
+  .displayVcom          = 0x14,
   .displayPrecharge     = 0x3C,
   .displayYflip         = 1,
 #elif defined ST7565
@@ -52,8 +52,8 @@ const settings_t defaultSettings = {
   .bootProfile          = profile_None,
   .initMode             = mode_sleep,           // Safer to boot in sleep mode by default!
   .buzzerMode           = disable,
-  .buttonWakeMode       = wake_all,
-  .shakeWakeMode        = wake_all,
+  .buttonWakeMode       = wake_sleep,
+  .shakeWakeMode        = wake_standby,
   .EncoderMode          = RE_Mode_Forward,
   .debugEnabled         = disable,
   .language             = lang_english,
@@ -76,7 +76,7 @@ const addonSettings_t defaultAddonSettings = {
   .fumeExtractorAfterrun = 2,
 #endif
 #ifdef ENABLE_ADDON_SWITCH_OFF_REMINDER
-  .swOffReminderEnabled          = disable,
+  .swOffReminderEnabled          = enable,
   .swOffReminderInactivityDelay  = 30,
   .swOffReminderBeepType         = switch_off_reminder_short_beep,
   .swOffReminderPeriod           = 5,
@@ -690,7 +690,7 @@ static void resetCurrentProfile(void){
       strcpy(systemSettings.Profile.tip[x].name, _BLANK_TIP);
     }
     strcpy(systemSettings.Profile.tip[0].name, "C210");
-    systemSettings.Profile.currentNumberOfTips      = 1;
+    systemSettings.Profile.currentNumberOfTips    = 1;
     systemSettings.Profile.defaultTip             = 0;
     systemSettings.Profile.power                  = 80;
     systemSettings.Profile.impedance              = 21;
@@ -702,7 +702,7 @@ static void resetCurrentProfile(void){
     Error_Handler();  // We shouldn't get here!
   }
   systemSettings.Profile.calADC_At_0                = 0;
-  systemSettings.Profile.tipFilter.coefficient      = 75;   // % of old data (more %, more filtering)
+  systemSettings.Profile.tipFilter.coefficient      = 50;   // % of old data (more %, more filtering)
   systemSettings.Profile.tipFilter.threshold        = 50;
   systemSettings.Profile.tipFilter.min              = 50;   // Don't go below x% when decreasing after exceeding threshold limits
   systemSettings.Profile.tipFilter.count_limit      = 0;
@@ -730,14 +730,14 @@ static void resetCurrentProfile(void){
   systemSettings.Profile.ntc.enabled                = 0;
   #endif
 
-  systemSettings.Profile.errorTimeout               = 100;                    // ms
+  systemSettings.Profile.errorTimeout               = 300;                    // ms
   systemSettings.Profile.errorResumeMode            = error_resume;
   systemSettings.Profile.sleepTimeout               = (uint32_t)5*60000;      // ms
   systemSettings.Profile.standbyTimeout             = (uint32_t)5*60000;
-  systemSettings.Profile.standbyTemperature         = 180;
-  systemSettings.Profile.defaultTemperature         = 320;
-  systemSettings.Profile.MaxSetTemperature          = 450;
-  systemSettings.Profile.MinSetTemperature          = 180;
+  systemSettings.Profile.standbyTemperature         = 100;
+  systemSettings.Profile.defaultTemperature         = 300;
+  systemSettings.Profile.MaxSetTemperature          = 400;
+  systemSettings.Profile.MinSetTemperature          = 70;
   systemSettings.Profile.boostTimeout               = 60000;                  // ms
   systemSettings.Profile.boostTemperature           = 50;
   systemSettings.Profile.pwmMul                     = 1;
@@ -747,7 +747,7 @@ static void resetCurrentProfile(void){
   systemSettings.Profile.shakeFiltering             = disable;
   systemSettings.Profile.WakeInputMode              = mode_shake;
   systemSettings.Profile.smartActiveEnabled          = disable;
-  systemSettings.Profile.smartActiveLoad             = 5;
+  systemSettings.Profile.smartActiveLoad             = 20;
   systemSettings.Profile.StandMode                  = mode_sleep;
   systemSettings.Profile.state                      = initialized;
 }
