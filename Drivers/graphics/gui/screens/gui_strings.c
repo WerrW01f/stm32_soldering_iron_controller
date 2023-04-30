@@ -286,7 +286,7 @@ const strings_t strings[LANGUAGE_COUNT] = {
 #ifdef HAS_BATTERY
       .SYSTEM_RememberLastTemp = " Температ.",
 #endif
-      .SYSTEM_DISPLAY_MENU = "Меню ЭКРАНА",
+      .SYSTEM_DISPLAY_MENU = "МЕНЮ ЭКРАНА",
 
 #ifndef ST756
       .DISPLAY_ContrastOrBrightness = "Яркость",
@@ -322,7 +322,7 @@ const strings_t strings[LANGUAGE_COUNT] = {
       .RESET_Reset_msg_all_1 = "ВЕРНУТЬ К",
       .RESET_Reset_msg_all_2 = "ЗАВОДСКИМ?",
 
-      .TIP_SETTINGS_Name = "Название",
+      .TIP_SETTINGS_Name = "Жало:",
       .TIP_SETTINGS_PID_kp = "ПИД kP",
       .TIP_SETTINGS_PID_ki = "ПИД kI",
       .TIP_SETTINGS_PID_kd = "ПИД kD",
