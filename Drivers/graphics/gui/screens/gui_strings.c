@@ -242,7 +242,7 @@ const strings_t strings[LANGUAGE_COUNT] = {
       .IRON_Standby = "Сон через",
       .IRON_Sleep = "Выключать",
       .IRON_Boost = "Буст",
-      .IRON_Boost_Add = " Догрев",
+      .IRON_Boost_Add = " догрев",
       .IRON_Wake_Mode = "ДатчикСна",
       .IRON_Shake_Filtering = " фильтр",
       .IRON_Stand_Mode = "Подставка",
@@ -280,11 +280,11 @@ const strings_t strings[LANGUAGE_COUNT] = {
       .SYSTEM_DEBUG = "Отладка",
       .SYSTEM_CLONE_FIX = "ФиксКлонов",
       .SYSTEM_RESET_MENU = "МЕНЮ СБРОСА",
-      .SYSTEM_Remember = "  ЗАПОМИНАТЬ",
-      .SYSTEM_RememberLastProfile = " Профиль",
-      .SYSTEM_RememberLastTip = " Жало",
+      .SYSTEM_Remember = " ЗАПОМИНАТЬ:",
+      .SYSTEM_RememberLastProfile = "  Профиль",
+      .SYSTEM_RememberLastTip = "  Жало",
 #ifdef HAS_BATTERY
-      .SYSTEM_RememberLastTemp = " Температ.",
+      .SYSTEM_RememberLastTemp = "  Температ.",
 #endif
       .SYSTEM_DISPLAY_MENU = "МЕНЮ ЭКРАНА",
 
@@ -334,19 +334,19 @@ const strings_t strings[LANGUAGE_COUNT] = {
       .CAL_ZeroSet = "ХолСмещОУ  ",       // Must be 11 chars long
       .CAL_Sampling = "Замеряю...   ",      // Must be 11 chars long
       .CAL_Captured = "Записано   ",      // Must be 11 chars long
-      .CAL_Step = "ШАГ:",
+      .CAL_Step = "ЗАДАНО:",
       .CAL_Wait = "ЖДИТЕ...",
-      .CAL_Measured = "ЗАМЕРЯЮ:",
+      .CAL_Measured = "ЗАМЕРЕНО:",
       .CAL_Success = "УСПЕШНО!",
       .CAL_Failed = "НЕУДАЧА!",
       .CAL_DELTA_HIGH_1 = "РАЗНИЦА >50\260C",
-      .CAL_DELTA_HIGH_2 = "задайте вручную",
-      .CAL_DELTA_HIGH_3 = "и повторите",
+      .CAL_DELTA_HIGH_2 = "меняйте параметр",
+      .CAL_DELTA_HIGH_3 = "АЦП и повторите",
       .CAL_Error = "ОШИБКА!",
       .CAL_Aborting = "выход...",
 
       ._Language = "Язык",
-      .__Temp = " Нагрев",
+      .__Temp = "Темп.Сна",
       .__Delay = " Задержка",
       ._Cal_250 = "АЦП 250\260C",
       ._Cal_400 = "АЦП 400\260C",
@@ -370,9 +370,9 @@ const strings_t strings[LANGUAGE_COUNT] = {
       .WakeModes =   { "откл", "СОН", "ВЫКЛ", "все" },
       .wakeMode =    { "РУЧКА", "СТОЙКА" },
       .encMode =     { "РЕВЕРС", "ПРЯМО" },
-      .InitMode =    { "ВЫКЛ", "СОН", "ПУСК" },
+      .InitMode =    { "ВЫКЛ", "СОН", "ВКЛ" },
       .dimMode =     { "откл", "СОН", "все" },
-      .errMode =     { "ВЫКЛ", "ПУСК", "ПРЕД" },
+      .errMode =     { "ВЫКЛ", "ВКЛ", "ПРЕД" },
     },
 
     [lang_swedish] = {
